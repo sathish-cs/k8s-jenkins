@@ -19,7 +19,7 @@ pipeline {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
-                             --destination=rocksathish/nginx:${BUILD_NUMBER}
+                             --destination=rocksathish/helloworld:${BUILD_NUMBER}
             '''
           }
         }
