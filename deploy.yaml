@@ -16,7 +16,7 @@ spec:
         app: web
     spec:
       containers:
-      - image: rocksathish/nginx:<TAG>
+      - image: rocksathish/helloworld:<TAG>
         imagePullPolicy: Always
         name: myweb
 
