@@ -1,5 +1,9 @@
 pipeline {
 
+  options {
+    ansiColor('xterm')
+  }
+
   agent {
     kubernetes {
       yamlFile 'build.yaml'
@@ -25,7 +29,7 @@ pipeline {
     stage('Deploy App to Kubernetes') {     
       steps {
         container('kubectl') {
-          withCredentials([file(credentialsId: 'config', variable: 'KUBECONFIG')]) {
+          withCredentials([file(credentialsId: 'k8s', variable: 'KUBECONFIG')]) {
             sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" deploy.yaml'
             sh 'kubectl apply -f deploy.yaml'
           }
