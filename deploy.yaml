@@ -30,9 +30,9 @@ metadata:
 spec:
   ports:
   - nodePort: 31001
-    port: 80
+    port: 8000
     protocol: TCP
-    targetPort: 80
+    targetPort: 8000
   selector:
     app: web
   type: NodePort
