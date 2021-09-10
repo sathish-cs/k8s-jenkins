@@ -13,7 +13,7 @@ pipeline {
         container('kaniko') {
           script {
             sh '''
-            /kaniko/executor --dockerfile `pwd`/Dockerfile \  
+            /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
                              --destination=rocksathish/helloworld:${BUILD_NUMBER} /* Pushing docker image to private repo */
             '''
