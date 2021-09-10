@@ -26,7 +26,7 @@ pipeline {
       steps {
         container('kubectl') { /* Using kubectl to deploy images */
           withCredentials([file(credentialsId: 'k8s', variable: 'KUBECONFIG')]) {  /* Passing kubernetes config file as variable */
-            sh 'kubectl apply -f namspace.yaml'
+            sh 'kubectl apply -f  namespace.yaml'
             sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" deploy.yaml'
             sh 'kubectl apply -f deploy.yaml'
           }
