@@ -15,7 +15,7 @@ pipeline {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
-                             --destination=rocksathish/helloworld:${BUILD_NUMBER} /* Pushing docker image to private repo */
+                             --destination=rocksathish/helloworld:${BUILD_NUMBER} 
             '''
           }
         }
